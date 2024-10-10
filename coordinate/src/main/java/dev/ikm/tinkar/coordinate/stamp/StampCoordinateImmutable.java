@@ -13,18 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-module dev.ikm.tinkar.terms {
-    requires transitive dev.ikm.tinkar.component;
-    requires dev.ikm.tinkar.common;
-    requires java.xml;
-    requires dev.ikm.jpms.eclipse.collections.api;
-    requires dev.ikm.jpms.eclipse.collections;
-    requires org.slf4j;
-    requires transitive static dev.ikm.jpms.auto.service;
-    exports dev.ikm.tinkar.terms;
+package dev.ikm.tinkar.coordinate.stamp;
+
+import dev.ikm.tinkar.coordinate.ImmutableCoordinate;
+
+public sealed interface StampCoordinateImmutable extends StampCoordinate, ImmutableCoordinate
+    permits StampCoordinateRecord {
 }

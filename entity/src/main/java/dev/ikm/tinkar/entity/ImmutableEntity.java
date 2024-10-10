@@ -13,18 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+package dev.ikm.tinkar.entity;
+
+/**
+ * Parent interface for all <code>ImmutableEntity</code> classes.
+ *
+ * @TODO consider removing the Entity interface and working directly with the records.
+ * Except the ObservableEntity implements the interface, so need to consider how we best approach.
+ * Maybe this current approach is optimal.
  */
-module dev.ikm.tinkar.terms {
-    requires transitive dev.ikm.tinkar.component;
-    requires dev.ikm.tinkar.common;
-    requires java.xml;
-    requires dev.ikm.jpms.eclipse.collections.api;
-    requires dev.ikm.jpms.eclipse.collections;
-    requires org.slf4j;
-    requires transitive static dev.ikm.jpms.auto.service;
-    exports dev.ikm.tinkar.terms;
+public sealed interface ImmutableEntity<T extends EntityVersion> extends Entity<T>
+    permits ConceptRecord, SemanticRecord, StampRecord, PatternRecord {
 }
