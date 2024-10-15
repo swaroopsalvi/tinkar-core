@@ -23,6 +23,7 @@ import dev.ikm.tinkar.entity.StampService;
 
 open module dev.ikm.tinkar.integration.test {
     requires dev.ikm.tinkar.common;
+    requires dev.ikm.tinkar.composer;
     requires dev.ikm.tinkar.entity;
     requires dev.ikm.tinkar.provider.entity;
     requires dev.ikm.tinkar.terms;
@@ -41,15 +42,9 @@ open module dev.ikm.tinkar.integration.test {
     requires org.apache.lucene.highlighter;
     requires org.apache.lucene.queryparser;
     requires org.apache.lucene.core;
-    requires dev.ikm.tinkar.fhir.transformers;
     requires dev.ikm.tinkar.ext.binding;
     requires dev.ikm.jpms.recordbuilder.core;
     requires java.compiler;
-
-    requires transitive dev.ikm.jpms.hapi.fhir.base;
-    requires transitive dev.ikm.jpms.hapi.fhir.r4;
-    requires transitive dev.ikm.jpms.hapi.fhir.structures.r4;
-    requires transitive dev.ikm.jpms.hapi.fhir.utilities;
 
     uses CachingService;
     uses DataServiceController;
