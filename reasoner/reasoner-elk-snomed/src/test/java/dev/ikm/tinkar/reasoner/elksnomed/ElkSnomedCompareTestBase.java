@@ -33,7 +33,6 @@ import dev.ikm.elk.snomed.SnomedDescriptions;
 import dev.ikm.elk.snomed.SnomedIds;
 import dev.ikm.elk.snomed.SnomedOntology;
 import dev.ikm.elk.snomed.model.Concept;
-import dev.ikm.elk.snomed.model.ConcreteRole;
 import dev.ikm.elk.snomed.model.ConcreteRoleType;
 import dev.ikm.elk.snomed.model.RoleType;
 import dev.ikm.elk.snomed.owlel.OwlElOntology;
@@ -51,8 +50,6 @@ public abstract class ElkSnomedCompareTestBase extends ElkSnomedTestBase {
 		LOG.info("Files exist");
 		LOG.info("\t" + axioms_file);
 		LOG.info("\t" + rels_file);
-		// TODO back this out once Decimal is implemented
-		ConcreteRole.convert_to_float_for_compare = true;
 		ElkSnomedData data = buildSnomedData();
 		{
 			Concept us_con = data.getConcept(ElkSnomedData.getNid(SnomedIds.us_nlm_module));

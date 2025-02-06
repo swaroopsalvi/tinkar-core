@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>dev.ikm.tinkar</groupId>
 		<artifactId>reasoner</artifactId>
-		<version>1.80.0-SNAPSHOT</version>
+		<version>1.83.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>reasoner-elk-snomed</artifactId>
@@ -13,15 +13,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>entity</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
 			<artifactId>coordinate</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>entity-provider</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -29,8 +21,20 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>entity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>entity-provider</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>executor-provider</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>dev.ikm.tinkar.ext.owl</groupId>
+			<artifactId>owl-extension</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
