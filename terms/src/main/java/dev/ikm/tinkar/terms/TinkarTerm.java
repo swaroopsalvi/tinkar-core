@@ -143,8 +143,8 @@ public class TinkarTerm {
      * Java binding for the pattern described as <strong><em>Inferred Navigation Pattern</em></strong>;
      * identified by UUID: {@code a53cc42d-c07e-5934-96b3-2ede3264474e}.
      * <p> Used to specify the relationship origins and destinations for concepts based on inferred axioms.
-     * <p> Field 0 is a Component ID that represents Relationship Destination.
-     * <p> Field 1 is a Component ID that represents Relationship Origin.
+     * <p> Field 0 is a Component ID Set that represents Relationship Destinations.
+     * <p> Field 1 is a Component ID Set that represents Relationship Origins.
      */
     public static final EntityProxy.Pattern INFERRED_NAVIGATION_PATTERN =
             EntityProxy.Pattern.make("Inferred navigation", UUID.fromString("a53cc42d-c07e-5934-96b3-2ede3264474e"));
@@ -183,6 +183,15 @@ public class TinkarTerm {
             EntityProxy.Pattern.make("Version control path origin pattern", UUID.fromString("70f89dd5-2cdb-59bb-bbaa-98527513547c"));
 
     /**
+     * Java binding for the pattern described as <strong><em>Version control module origin pattern</em></strong>;
+     * identified by UUID: {@code 536b0ec4-4974-47ae-93a6-ae6c4d169780}.
+     * <p> Used to support module origin semantics.
+     * <p> Field 0 is a Component ID Set that represents the originating module (i.e., extended module) concept.
+     */
+    public static final EntityProxy.Pattern MODULE_ORIGINS_PATTERN =
+            EntityProxy.Pattern.make("Version control module origin pattern", UUID.fromString("536b0ec4-4974-47ae-93a6-ae6c4d169780"));
+
+    /**
      * Java binding for the pattern described as <strong><em>Version control path pattern</em></strong>;
      * identified by UUID: {@code add1db57-72fe-53c8-a528-1614bda20ec6}.
      * <p> Used to support path membership semantics.
@@ -217,8 +226,8 @@ public class TinkarTerm {
      * Java binding for the pattern described as <strong><em>Stated Navigation Pattern</em></strong>;
      * identified by UUID: {@code d02957d6-132d-5b3c-adba-505f5778d998}.
      * <p> Used to specify the relationship origins and destinations for concepts based on stated axioms.
-     * <p> Field 0 is a component ID for the relationship destination.
-     * <p> Field 1 is a component ID for the relationship origin
+     * <p> Field 0 is a Component ID Set for the relationship destinations.
+     * <p> Field 1 is a Component ID Set for the relationship origins.
      */
     public static final EntityProxy.Pattern STATED_NAVIGATION_PATTERN =
             EntityProxy.Pattern.make("Stated navigation", UUID.fromString("d02957d6-132d-5b3c-adba-505f5778d998"));
@@ -839,7 +848,7 @@ public class TinkarTerm {
      * ba2efe6b-fe56-3d91-ae0f-3b389628f74c</a>}.
      */
     public static final EntityProxy.Concept CHINESE_LANGUAGE =
-            EntityProxy.Concept.make("Chinese language (SOLOR)", UUID.fromString("ba2efe6b-fe56-3d91-ae0f-3b389628f74c"), UUID.fromString("45022532-9567-11e5-8994-feff819cdc9f"));
+            EntityProxy.Concept.make("Chinese language (SOLOR)", UUID.fromString("ba2efe6b-fe56-3d91-ae0f-3b389628f74c"), UUID.fromString("45022532-9567-11e5-8994-feff819cdc9f"), UUID.fromString("aacbc859-e9a0-5e01-b6a9-9a255a47b0c9"));
     /**
      * Java binding for the concept described as <strong><em>Chronicle properties (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -1608,7 +1617,7 @@ public class TinkarTerm {
      * 7e462e33-6d94-38ae-a044-492a857a6853</a>}.
      */
     public static final EntityProxy.Concept DANISH_LANGUAGE =
-            EntityProxy.Concept.make("Danish language (SOLOR)", UUID.fromString("7e462e33-6d94-38ae-a044-492a857a6853"), UUID.fromString("45021f10-9567-11e5-8994-feff819cdc9f"));
+            EntityProxy.Concept.make("Danish language (SOLOR)", UUID.fromString("7e462e33-6d94-38ae-a044-492a857a6853"), UUID.fromString("45021f10-9567-11e5-8994-feff819cdc9f"), UUID.fromString("987681fb-f3ef-595d-90e2-067baf2bc71f"));
     /**
      * Java binding for the concept described as <strong><em>Database UUID (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -2012,7 +2021,7 @@ public class TinkarTerm {
      * 674ad858-0224-3f90-bcf0-bc4cab753d2d</a>}.
      */
     public static final EntityProxy.Concept DUTCH_LANGUAGE =
-            EntityProxy.Concept.make("Dutch language (SOLOR)", UUID.fromString("674ad858-0224-3f90-bcf0-bc4cab753d2d"), UUID.fromString("45022280-9567-11e5-8994-feff819cdc9f"));
+            EntityProxy.Concept.make("Dutch language (SOLOR)", UUID.fromString("674ad858-0224-3f90-bcf0-bc4cab753d2d"), UUID.fromString("45022280-9567-11e5-8994-feff819cdc9f"), UUID.fromString("21d11bd1-3dab-5034-9625-81b9ae2bd8e7"));
     /**
      * Java binding for the concept described as <strong><em>Dynamic assemblage definition panel (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -2230,7 +2239,7 @@ public class TinkarTerm {
      * 06d905ea-c647-3af9-bfe5-2514e135b558</a>}.
      */
     public static final EntityProxy.Concept ENGLISH_LANGUAGE =
-            EntityProxy.Concept.make("English language (SOLOR)", UUID.fromString("06d905ea-c647-3af9-bfe5-2514e135b558"), UUID.fromString("45021920-9567-11e5-8994-feff819cdc9f"));
+            EntityProxy.Concept.make("English language (SOLOR)", UUID.fromString("06d905ea-c647-3af9-bfe5-2514e135b558"), UUID.fromString("45021920-9567-11e5-8994-feff819cdc9f"), UUID.fromString("2018e5a-46ba-5297-92f1-6931b9f98a12"));
     /**
      * Java binding for the concept described as <strong><em>Entry sequence for component (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -2617,7 +2626,7 @@ public class TinkarTerm {
      * 8b23e636-a0bd-30fb-b8e2-1f77eaa3a87e</a>}.
      */
     public static final EntityProxy.Concept FRENCH_LANGUAGE =
-            EntityProxy.Concept.make("French language (SOLOR)", UUID.fromString("8b23e636-a0bd-30fb-b8e2-1f77eaa3a87e"), UUID.fromString("45021dbc-9567-11e5-8994-feff819cdc9f"));
+            EntityProxy.Concept.make("French language (SOLOR)", UUID.fromString("8b23e636-a0bd-30fb-b8e2-1f77eaa3a87e"), UUID.fromString("45021dbc-9567-11e5-8994-feff819cdc9f"), UUID.fromString("01707e47-5f6d-555e-80af-3c1ffb297eaa"));
     /**
      * Java binding for the concept described as <strong><em>Fully qualified name description type (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -2769,7 +2778,7 @@ public class TinkarTerm {
      * ee9ac5d2-a07c-3981-a57a-f7f26baf38d8</a>}.
      */
     public static final EntityProxy.Concept HEALTH_CONCEPT =
-            EntityProxy.Concept.make("Health concept (SOLOR)", UUID.fromString("ee9ac5d2-a07c-3981-a57a-f7f26baf38d8"), UUID.fromString("a892950a-0847-300c-b477-4e3cbb945225"));
+            EntityProxy.Concept.make("Health concept (SOLOR)", UUID.fromString("ee9ac5d2-a07c-3981-a57a-f7f26baf38d8"), UUID.fromString("a892950a-0847-300c-b477-4e3cbb945225"), UUID.fromString("f6daf03a-93d6-5bab-8dc9-f60c327cf012"));
     /**
      * Java binding for the concept described as <strong><em>Health risk (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -3209,7 +3218,7 @@ public class TinkarTerm {
      * aa789d52-2278-54cb-9a13-f41c36249f77</a>}.
      */
     public static final EntityProxy.Concept JAPANESE_LANGUAGE =
-            EntityProxy.Concept.make("Japanese language (SOLOR)", UUID.fromString("aa789d52-2278-54cb-9a13-f41c36249f77"), UUID.fromString("450226cc-9567-11e5-8994-feff819cdc9f"));
+            EntityProxy.Concept.make("Japanese language (SOLOR)", UUID.fromString("aa789d52-2278-54cb-9a13-f41c36249f77"), UUID.fromString("450226cc-9567-11e5-8994-feff819cdc9f"), UUID.fromString("7d090f5d-b7fb-5457-8183-da668d50a18e"));
     /**
      * Java binding for the concept described as <strong><em>Join query clause (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -3689,7 +3698,7 @@ public class TinkarTerm {
      * e9645d95-8a1f-3825-8feb-0bc2ee825694</a>}.
      */
     public static final EntityProxy.Concept LITHUANIAN_LANGUAGE =
-            EntityProxy.Concept.make("Lithuanian language (SOLOR)", UUID.fromString("e9645d95-8a1f-3825-8feb-0bc2ee825694"), UUID.fromString("45022410-9567-11e5-8994-feff819cdc9f"));
+            EntityProxy.Concept.make("Lithuanian language (SOLOR)", UUID.fromString("e9645d95-8a1f-3825-8feb-0bc2ee825694"), UUID.fromString("45022410-9567-11e5-8994-feff819cdc9f"), UUID.fromString("8fa63274-70e3-5b11-9669-1b7bdb372b1a"));
     /**
      * Java binding for the concept described as <strong><em>Logic assemblage (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -4491,7 +4500,14 @@ public class TinkarTerm {
      */
     public static final EntityProxy.Concept PATH_ORIGINS =
             EntityProxy.Concept.make("Path origins (SOLOR)", UUID.fromString("6e6a112e-7d8c-53c7-aaf1-c46e2d69743c"));
-
+    /**
+     * Java binding for the concept described as <strong><em>Module origins (SOLOR)</em></strong>;
+     * identified by UUID: {@code
+     * <a href="http://localhost:8080/terminology/rest/concept/462862d4-5df9-426e-b785-a1264e24769fc">
+     * 462862d4-5df9-426e-b785-a1264e24769fc</a>}.
+     */
+    public static final EntityProxy.Concept MODULE_ORIGINS =
+            EntityProxy.Concept.make("Module origins (SOLOR)", UUID.fromString("462862d4-5df9-426e-b785-a1264e24769f"));
     /**
      * Java binding for the concept described as <strong><em>Path origins for stamp path (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -5164,7 +5180,7 @@ public class TinkarTerm {
      * a63f4bf2-a040-11e5-8994-feff819cdc9f</a>}.
      */
     public static final EntityProxy.Concept ROLE_GROUP =
-            EntityProxy.Concept.make("Role group (SOLOR)", UUID.fromString("a63f4bf2-a040-11e5-8994-feff819cdc9f"), UUID.fromString("051fbfed-3c40-3130-8c09-889cb7b7b5b6"));
+            EntityProxy.Concept.make("Role group (SOLOR)", UUID.fromString("a63f4bf2-a040-11e5-8994-feff819cdc9f"), UUID.fromString("051fbfed-3c40-3130-8c09-889cb7b7b5b6"), UUID.fromString("f97abff6-a221-57a1-9cd6-e79e723bfe2a"));
     /**
      * Java binding for the concept described as <strong><em>Role operator (SOLOR)</em></strong>;
      * identified by UUID: {@code
@@ -5308,7 +5324,7 @@ public class TinkarTerm {
      * 0418a591-f75b-39ad-be2c-3ab849326da9</a>}.
      */
     public static final EntityProxy.Concept SCTID =
-            EntityProxy.Concept.make("SCTID (SOLOR)", UUID.fromString("0418a591-f75b-39ad-be2c-3ab849326da9"), UUID.fromString("87360947-e603-3397-804b-efd0fcc509b9"));
+            EntityProxy.Concept.make("SCTID (SOLOR)", UUID.fromString("0418a591-f75b-39ad-be2c-3ab849326da9"), UUID.fromString("87360947-e603-3397-804b-efd0fcc509b9"), UUID.fromString("ab9a0e0a-6359-5462-859c-96c3d4ef2341"));
     /**
      * Java binding for the concept described as <strong><em>SH profile (SOLOR)</em></strong>;
      * identified by UUID: {@code

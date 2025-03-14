@@ -15,31 +15,30 @@
  */
 package dev.ikm.tinkar.reasoner.elksnomed;
 
-import java.io.IOException;
-
+import dev.ikm.tinkar.common.service.PrimitiveData;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dev.ikm.tinkar.common.service.PrimitiveData;
+import java.io.IOException;
 
-public class ElkSnomedClassifierIntl20241001TestIT extends ElkSnomedClassifierTestBase
-		implements SnomedVersionInternational {
+public class ElkSnomedCompareUs20230901TestIT extends ElkSnomedCompareTestBase implements SnomedVersionUs {
 
-	private static final Logger LOG = LoggerFactory.getLogger(ElkSnomedClassifierIntl20241001TestIT.class);
+	private static final Logger LOG = LoggerFactory.getLogger(ElkSnomedCompareUs20230901TestIT.class);
 
 	static {
-		test_case = "snomed-intl-20241001";
-	}
-
-	{
-		expected_supercs_cnt = 601696;
+		test_case = "snomed-us-20230901";
 	}
 
 	@Override
 	public String getVersion() {
-		return "20241001";
+		return "20230901";
+	}
+
+	@Override
+	public String getInternationalVersion() {
+		return "20230630";
 	}
 
 	@BeforeAll
