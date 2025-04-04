@@ -15,6 +15,7 @@
  */
 package dev.ikm.tinkar.common.util.broadcast;
 
+import dev.ikm.tinkar.common.service.TinkExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,22 +25,24 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class SimpleBroadcaster<T> implements Broadcaster<T>, Subscriber<T>{
 
     private static final Logger LOG = LoggerFactory.getLogger(SimpleBroadcaster.class);
-    final CopyOnWriteArrayList<WeakReference<Subscriber<T>>> subscriberWeakReferenceList = new CopyOnWriteArrayList();
+    final CopyOnWriteArrayList<WeakReference<Subscriber<T>>> subscriberWeakReferenceList = new CopyOnWriteArrayList<>();
 
     public void dispatch(T item) {
-        for (WeakReference<Subscriber<T>> subscriberWeakReference: subscriberWeakReferenceList) {
-            try  {
-                Subscriber<T> subscriber = subscriberWeakReference.get();
-                if (subscriber == null) {
-                    subscriberWeakReferenceList.remove(subscriberWeakReference);
-                } else {
-                    subscriber.onNext(item);
-                }
-            } catch (Throwable t) {
-                LOG.error(t.getMessage(), t);
-                subscriberWeakReferenceList.remove(subscriberWeakReference);
-            }
-        }
+        subscriberWeakReferenceList.forEach(subscriberWeakReference ->
+                Thread.ofVirtual().start(() -> {
+                    try {
+                        Subscriber<T> subscriber = subscriberWeakReference.get();
+                        if (subscriber == null) {
+                            subscriberWeakReferenceList.remove(subscriberWeakReference);
+                        } else {
+                            subscriber.onNext(item);
+                        }
+                    } catch (Throwable t) {
+                        LOG.error(t.getMessage(), t);
+                        subscriberWeakReferenceList.remove(subscriberWeakReference);
+                    }
+                })
+        );
     }
 
     @Override
