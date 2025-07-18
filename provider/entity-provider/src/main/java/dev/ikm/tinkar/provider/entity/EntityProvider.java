@@ -222,6 +222,7 @@ public class EntityProvider implements EntityService, PublicIdService, DefaultDe
                         entity.getBytes(), entity, activity);
             }
             case StampEntity stampEntity -> {
+                STAMP_CACHE.put(stampEntity.nid(), stampEntity);
                 if (stampEntity.lastVersion().stateNid() == State.CANCELED.nid()) {
                     PrimitiveData.get().addCanceledStampNid(stampEntity.nid());
                 }
